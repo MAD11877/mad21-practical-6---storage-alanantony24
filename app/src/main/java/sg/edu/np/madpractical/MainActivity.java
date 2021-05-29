@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        int position = intent.getIntExtra("Position", 0);
+        int position = intent.getIntExtra("Id", 0);
         u = ListActivity.userList.get(position);
         TextView hello = findViewById(R.id.txtName);
         TextView desc = findViewById(R.id.description);

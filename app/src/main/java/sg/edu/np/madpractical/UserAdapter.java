@@ -44,7 +44,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent newIntent = new Intent(holder.profilePic.getContext(), MainActivity.class);
-                        newIntent.putExtra("Position", position);
+                        newIntent.putExtra("Id", position);
                         holder.profilePic.getContext().startActivity(newIntent);
                     }
                 })
