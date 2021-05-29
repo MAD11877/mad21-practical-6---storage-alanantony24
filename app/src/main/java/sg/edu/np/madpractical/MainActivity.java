@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Followed", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(this,"Unfollowed", Toast.LENGTH_SHORT).show();
-        db.updateUser(u, id);
+        db.updateUser(u);
         setFollowBtn();
     }
     private void setFollowBtn() {
