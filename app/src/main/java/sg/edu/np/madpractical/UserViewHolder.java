@@ -13,6 +13,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         nameText = itemView.findViewById(R.id.nameText);
         descText = itemView.findViewById(R.id.descriptionText);
-        profilePic = itemView.findViewById(R.id.profilePic);
+        profilePic = itemView.findViewById(R.id.img_prof);
     }
 }

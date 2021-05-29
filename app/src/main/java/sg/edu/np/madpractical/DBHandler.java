@@ -57,10 +57,10 @@ public class DBHandler extends SQLiteOpenHelper {
         return usersList;
     }
     public void updateUser(User u, int id){
-        id = u.id;
+        id = u.getId();
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(FOLLOWED, u.isFollowed());
-        db.update(USERS, cv, ID + " = ? " , new String[]{String.valueOf(u.getId())});
+        db.update(USERS, cv, ID + " = ? " , new String[]{String.valueOf(id)});
     }
 }

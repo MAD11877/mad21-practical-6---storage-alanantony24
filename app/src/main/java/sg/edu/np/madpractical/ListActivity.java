@@ -19,13 +19,15 @@ public class ListActivity extends AppCompatActivity {
         DBHandler db = new DBHandler(ListActivity.this);
         userList = db.getUsers();
         //only run the 1st time to randomize(when app is installed)
-        for (int i = 0; i < 20; i++) {
-            u.name = "Name" + new Random().nextInt();
-            u.description = "Description" + new Random().nextInt();
-            u.id = i;
-            u.followed = new Random().nextBoolean();
-            userList.add(u);
-            db.addUser(u);
+        if(userList.isEmpty()){
+            for (int i = 0; i < 20; i++) {
+                u.name = "Name" + new Random().nextInt();
+                u.description = "Description" + new Random().nextInt();
+                u.id = i;
+                u.followed = new Random().nextBoolean();
+                userList.add(u);
+                db.addUser(u);
+            }
         }
         RecyclerView rv = findViewById(R.id.rv);
         UserAdapter userAdapter = new UserAdapter(userList);
