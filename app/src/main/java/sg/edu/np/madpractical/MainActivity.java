@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         if(u.followed)
             Toast.makeText(this, "Followed", Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(this,"Unfollowed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"UnFollowed", Toast.LENGTH_SHORT).show();
         db.updateUser(u);
         setFollowBtn();
     }
