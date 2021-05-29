@@ -3,7 +3,6 @@ package sg.edu.np.madpractical;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int position = intent.getIntExtra("Position", 0);
         u = ListActivity.userArrayList.get(position);
-        TextView hello = findViewById(R.id.helloWorld);
+        TextView hello = findViewById(R.id.txtName);
         TextView desc = findViewById(R.id.description);
         hello.setText(u.name);
         desc.setText(u.description);
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setFollowBtn();
     }
     private void setFollowBtn() {
-        Button b = findViewById(R.id.followBtn);
+        Button b = findViewById(R.id.btnFollow);
         if(u.followed) {
             b.setText("Unfollow");
         }

@@ -39,7 +39,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(USERS, null, values);
         db.close();
     }
-    public ArrayList<User> getUser(){
+    public ArrayList<User> getUsers(){
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM USERS", null);
         User u = null;
@@ -57,6 +57,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return usersList;
     }
     public void updateUser(User u, int id){
+        id = u.id;
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(FOLLOWED, u.isFollowed());
